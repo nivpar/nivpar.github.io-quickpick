@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<script>
+	var arr = [];
+	while(arr.length < 5){
+    	var r = Math.floor(Math.random() * 48) + 1;
+    	if(arr.indexOf(r) === -1) arr.push(r);
+    }
+    var lucky = [];
+    while(lucky.length < 1){
+    	var x = Math.floor(Math.random() * 48) + 1;
+    	if(arr.indexOf(x) === -1) lucky.push(x);
+    }
+    arr.sort((a,b) => a-b);
+    document.writeln("The quickpick numbers are: ");
+    for (i = 0; i < arr.length; i++){
+    	document.writeln(arr[i] + " ");
+    }document.write("<br>" + "The luckyball number is " + lucky[0] + "<br><br>");
+    var fivewin = prompt("Enter 5 winning numbers").split(" ");
+    var luckyball = prompt("Enter lucky ball number", 1);
+    fivewin.sort((a,b) => a-b);
+    document.writeln("The winning numbers are: ")
+    for (i=0; i < fivewin.length; i++){
+    	document.write(fivewin[i] + " ");
+    }document.write("<br>" + "The luckyball number is " + luckyball[0] + "<br><br><br>");
+    var counter = 0;
+    var lcounter = 0;
+    for (i=0; i < arr.length; i++){
+    	for (j = 0; j < fivewin.length; j++) {
+    		if (arr[i] == fivewin[j]) {
+    			counter = counter+1;
+    		}
+    	}
+    }
+    if (lucky[0] == luckyball){
+    	lcounter = 1;
+    }
+    if (counter == 5 && lcounter == 1) {
+    	document.writeln("You win! Your payout is $7000 a week for life!");
+    }
+    if (counter == 5 && lcounter == 0) {
+    	document.writeln("You win! Your payout is $25000 a year for life!");
+    }
+    if (counter == 4 && lcounter == 1) {
+    	document.writeln("You win! Your payout is $5000");
+    }
+    if (counter == 4 && lcounter == 0) {
+    	document.writeln("You win! Your payout is $200");
+    }
+    if (counter == 3 && lcounter == 1) {
+    	document.writeln("You win! Your payout is $150");
+    }
+    if (counter == 3 && lcounter == 0) {
+    	document.writeln("You win! Your payout is $20");
+    }
+    if (counter == 2 && lcounter == 1) {
+    	document.writeln("You win! Your payout is $25");
+    }
+    if (counter == 2 && lcounter == 0) {
+    	document.writeln("You win! Your payout is $3");
+    }
+    if (counter == 1 && lcounter == 1) {
+    	document.writeln("You win! Your payout is $6");
+    }
+    if (counter == 0 && lcounter == 1) {
+    	document.writeln("You win! Your payout is $4");
+    }
+    if ((counter == 0 && lcounter == 0)|| (counter == 1 && lcounter == 0) ) {
+    	document.writeln("You lose :(");
+    }
+</script>
+<body>
+	
+</body>
+</html>
+
