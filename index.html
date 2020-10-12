@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<script>
+	var arr = [];
+	while(arr.length < 6){
+    	var r = Math.floor(Math.random() * 48) + 1;
+    	if(arr.indexOf(r) === -1) arr.push(r);
+    }
+    document.getElementById('all numbers').innerHTML = arr[0] + arr[1] + arr[2] + arr[3] + arr[4] + arr[5];
+</script>
+<body>
+	<p id="all numbers"></p>
+</body>
+
